@@ -42,14 +42,39 @@
       "style": "scss",
       "linter": "eslint",
       "unitTestRunner": "jest",
-      "e2eTestRunner": "none"
+      "e2eTestRunner": "none",
+      "strict": true,
+      "standalone": true,
+      "routing": true,
+      "addTailwind": true,
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "prefix": "app",
+      "tags": "platform:angular, type:app"
     },
     "@nx/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "strict": true,
+      "standalone": true,
+      "changeDetection": "OnPush",
+      "style": "scss",
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "tags": "platform:angular"
     },
     "@nx/angular:component": {
-      "style": "scss"
+      "style": "scss",
+      "standalone": true,
+      "changeDetection": "OnPush",
+      "inlineStyle": true,
+      "inlineTemplate": true
+    },
+    "@nx/angular:pipe": {
+      "standalone": true
+    },
+    "@nx/angular:directive": {
+      "standalone": true
     }
   }
 }
