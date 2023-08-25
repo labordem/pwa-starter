@@ -6,3 +6,9 @@ globalThis.ngJest = {
   },
 };
 import 'jest-preset-angular/setup-jest';
+
+import '@angular/localize/init';
+
+// Workaround to bypass Jest bug :
+import { TextEncoder } from 'node:util';
+global.TextEncoder = TextEncoder;

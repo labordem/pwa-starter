@@ -1,0 +1,16 @@
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US" trgLang="fr">
+  <file original="ng.template" id="ngi18n">
+    <unit id="6947830843539421219">
+      <segment state="translated">
+        <source>Hello World!</source>
+        <target>Bonjour le monde!</target>
+      </segment>
+    </unit>
+    <unit id="3089099140397317908">
+      <segment state="translated">
+        <source>This text is translated with $localize</source>
+        <target>Ce texte est traduit avec $localize</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

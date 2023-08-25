@@ -29,7 +29,9 @@
         ],
         "scripts": [],
         "serviceWorker": true,
-        "ngswConfigPath": "apps/pwa/ngsw-config.json"
+        "ngswConfigPath": "apps/pwa/ngsw-config.json",
+        "i18nMissingTranslation": "warning",
+        "localize": true
       },
       "configurations": {
         "production": {
@@ -54,6 +56,12 @@
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
+        },
+        "en-US": {
+          "localize": ["en-US"]
+        },
+        "fr": {
+          "localize": ["fr"]
         }
       },
       "defaultConfiguration": "production"
@@ -62,19 +70,16 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "pwa:build:production"
+          "browserTarget": "pwa:build:production,en-US"
         },
         "development": {
-          "browserTarget": "pwa:build:development"
+          "browserTarget": "pwa:build:development,en-US"
+        },
+        "fr": {
+          "browserTarget": "pwa:build:development,fr"
         }
       },
       "defaultConfiguration": "development"
-    },
-    "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
-      "options": {
-        "browserTarget": "pwa:build"
-      }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
@@ -103,6 +108,21 @@
           "codeCoverage": true
         }
       }
+    },
+    "extract-i18n": {
+      "executor": "ng-extract-i18n-merge:ng-extract-i18n-merge",
+      "options": {
+        "browserTarget": "pwa:build",
+        "format": "xlf2",
+        "outputPath": "apps/pwa/src/locale",
+        "targetFiles": ["messages.fr.xlf"]
+      }
+    }
+  },
+  "i18n": {
+    "sourceLocale": "en-US",
+    "locales": {
+      "fr": "apps/pwa/src/locale/messages.fr.xlf"
     }
   }
 }
