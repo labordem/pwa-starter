@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve pwa",
     "build": "nx build pwa",
+    "build:pages": "nx build pwa --skip-nx-cache --base-href /pwa-starter/ --output-path docs",
     "test": "nx test pwa",
     "locale": "nx extract-i18n pwa"
   },
